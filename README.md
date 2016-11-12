@@ -9,3 +9,7 @@ A place to post talks...
 * http://calcotestudios.com/ccka
 * http://calcoestudios.com/ato2016
 * http://calcotestudios.com/kubecon-bof
+
+See the rest...
+
+* http://blog.gingergeek.com/speaking
