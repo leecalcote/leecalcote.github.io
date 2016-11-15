@@ -9,6 +9,7 @@ A place to post talks...
 * http://calcotestudios.com/ccka
 * http://calcoestudios.com/ato2016
 * http://calcotestudios.com/kubecon-bof
+* http://calcotestudios.com/alldaydevops2016
 
 See the rest...
 
