@@ -3,12 +3,12 @@
         <head>
         <link rel="author" href="https://linkedin.com/in/leecalcote" />
         <link rel="publisher" href="https://linkedin.com/in/leecalcote" />
+        <link rel="canonical" href="https://calcotestudios.com/talks/slides-from-engines-to-orchestrators.html" />
 <meta name="description" itemprop="description" content="Clouds, containers, infrastructure, applications and their management. Thoughts on software engineering, orchestration, configuration management, microservices..." />
-
 <meta name="keywords" itemprop="keywords" content="container orchestration, microservices, openstack, docker, paas, iaas, saas, devops, openshift, containers, network management, cloud, clouds, remote management,  entourage calendaring, archive entourage mail" />
-
-
-        <meta http-equiv="refresh" content="0; URL='http://calcotestudios.com/talks/slides-from-engines-to-orchestrators.html'" />
+        <meta http-equiv="refresh" content="0; url=https://calcotestudios.com/talks/slides-from-engines-to-orchestrators.html">
+        
+<!--  <meta http-equiv="refresh" content="0; URL='https://calcotestudios.com/talks/slides-from-engines-to-orchestrators.html'" /> -->
     </head>
     <body />
 </html>
