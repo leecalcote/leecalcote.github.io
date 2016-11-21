@@ -5,9 +5,9 @@
         <link rel="publisher" href="https://linkedin.com/in/leecalcote" />
 
         <!--<meta http-equiv="refresh" content="0; url=http://calcotestudios.com/talks/slides-from-engines-to-orchestrators.html">
-        <link rel="canonical" href="http://calcotestudios.com/talks/slides-from-engines-to-orchestrators.html" /> -->
+        <link rel="canonical" href="http://leecalcote.github.io/talks/slides-from-engines-to-orchestrators.html" /> -->
         <script>
-        window.location = "http://calcotestudios.com/talks/slides-from-engines-to-orchestrators.html";
+        window.location = "http://leecalcote.github.io/talks/slides-from-engines-to-orchestrators.html";
         </script>
     </head>
     <body />
