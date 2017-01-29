@@ -1,16 +1,18 @@
 <html>
   <head>
-	  <title>Lee Calcote's Talks</title>
+    <title>Lee Calcote's Talks</title>
       <style>
-	body {
-		background-attachment: fixed;
-		background-position: stretch;
-		background-image: url("Lee Calcote - All Things Open.jpg");
-		background-color: #01417f;	}
+  body {
+    background-attachment: fixed;
+    background-position: stretch;
+    background-image: url("Lee Calcote - All Things Open.jpg");
+    background-color: #01417f;  
+    font-family: sans-serif;
+  }
         li {
             font-family: sans-serif;
         }
-	ul {
+  ul {
             color: black;
           }
           h3 {
@@ -38,62 +40,88 @@
             padding-right: 25px;
           }
           li.cisco {
-          	list-style-image: url('http://www.cisco.com/favicon.ico');
+            list-style-image: url('http://www.cisco.com/favicon.ico');
           }
           li.tns {
-          	list-style-image: url('http://thenewstack.io/favicon.ico');
+            list-style-image: url('http://thenewstack.io/favicon.ico');
           }
           li.gg {
-          	list-style-image: url('http://blog.gingergeek.com/favicon.ico');
+            list-style-image: url('http://blog.gingergeek.com/favicon.ico');
           }
           li.nw {
-          	list-style-image: url('http://www.networkworld.com/www.idge.nww/favicon.ico');
+            list-style-image: url('http://www.networkworld.com/www.idge.nww/favicon.ico');
           }
           li.seagate {
-          	list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2016/07/seagate.png');
+            list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2016/07/seagate.png');
           }
           li.matrix {
-          	list-style-image: url('http://i1.wp.com/blog.gingergeek.com/wp-content/uploads/2009/06/cube-sh-small.png?resize=16%2C16');
+            list-style-image: url('http://i1.wp.com/blog.gingergeek.com/wp-content/uploads/2009/06/cube-sh-small.png?resize=16%2C16');
           }
           li.email {
-          	list-style-image: url('http://i2.wp.com/blog.gingergeek.com/wp-content/uploads/2009/02/email.png?resize=16%2C16');
+            list-style-image: url('http://i2.wp.com/blog.gingergeek.com/wp-content/uploads/2009/02/email.png?resize=16%2C16');
           }
           li.twitter {
-          	list-style-image: url('https://twitter.com/favicon.ico');
+            list-style-image: url('https://twitter.com/favicon.ico');
           }
           li.linkedin {
-          	list-style-image: url('http://www.linkedin.com/favicon.ico');
+            list-style-image: url('http://www.linkedin.com/favicon.ico');
           }
           li.github {
-          	list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2009/02/github.png');
+            list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2009/02/github.png');
           }
           li.medium {
-          	list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2009/02/medium.png');
+            list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2009/02/medium.png');
           }
           li.aboutme {
-          	list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2016/07/aboutme.png');
+            list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2016/07/aboutme.png');
           }
           li.bookme {
-          	list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2016/07/bookme.png');
+            list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2016/07/bookme.png');
           }
           li.disqus {
-          	list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2016/07/disqus.png');
+            list-style-image: url('http://blog.gingergeek.com/wp-content/uploads/2016/07/disqus.png');
           }
     </style>
+    <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+        var talks = [];
+            //$("#driver").click(function(){
+               $.getJSON('https://github.com/leecalcote/talks/raw/gh-pages/talks.json', function(talks) {
+                $.each(talks.upcomingTalk, function(i,t) {
+                  $('#upcoming').append('<li><a href="'+ t.eventURL + '">' + t.eventName + '</a></li>');
+                  //$('#upcoming').append('<li>Date: ' + t.date+ '</li>');
+                  $(talks).appendTo("#upcoming ul");
+               });
+                $.each(talks.previousTalk, function(j,t) {
+                  $('#previous').append('<li><a href="'+ t.eventURL + '">' + t.eventName + '</a></li>');
+                  //$('#previous').append('<li>Date: ' + t.date+ '</li>');
+                  $(talks).appendTo("#previous ul");
+               });
+                
+            });      
+         });
+      </script>
    </head>
    <body>
      <div>
        <h3><a href="http://blog.gingergeek.com/speaking">Talks</a></h3>
+       <ul id = "upcoming" style="white-space: nowrap;"><li style="margin-left:-1em;list-style-type:none;"><i><u>Upcoming</u></i></li></ul>
+       
+       <ul id = "previous" style="white-space: nowrap;"><li style="margin-left:-1em;list-style-type:none;"><u><i>Previous</i></u></li></ul>
+
        <ul style="white-space: nowrap;">
          <li style="margin-left:-1em;list-style-type:none;"><i>Upcoming</i></li>
          <li><a href="https://conferences.oreilly.com/velocity/vl-ca">Velocity 2017</a>
-      	 <li><a href="http://events.linuxfoundation.org/events/cloudnativecon-and-kubecon-europe">CloudNativeCon + KubeCon EU 2017</a>
+         <li><a href="http://events.linuxfoundation.org/events/cloudnativecon-and-kubecon-europe">CloudNativeCon + KubeCon EU 2017</a>
          <li><a href="https://tmt.knect365.com/container-world">Container World 2017</a>
-	       <li><a href="http://www.socallinuxexpo.org/scale/15x/">SCALE 15x</a>
+         <li><a href="http://www.socallinuxexpo.org/scale/15x/">SCALE 15x</a>
          <li><a href="">O'Reilly Webcast - Load-balancers</a>
          <li><a href="http://techfieldday.com/event/tfd13/">Tech Field Day 13</a>
          <li style="margin-left:-1em;list-style-type:none;"><i>Previous</i></li>
-	       <li>SolarWinds Tech Summit 2017 <a href="http://calcotestudios.com/techsummit-feto">(1)</a>, <a href="http://calcotestudios.com/techsummit-over-under">(2)</a>, <a href="http://calcotestudios.com/techsummit-ccco">(3)</a></li>
+         <li>SolarWinds Tech Summit 2017 <a href="http://calcotestudios.com/techsummit-feto">(1)</a>, <a href="http://calcotestudios.com/techsummit-over-under">(2)</a>, <a href="http://calcotestudios.com/techsummit-ccco">(3)</a></li>
          <li><a href="http://calcotestudios.com/alldaydevops2016">All Day DevOps 2016</a></li>
          <li><a href="http://calcotestudios.com/kubecon-bof">KubeCon + CloudNativeCon + PrometheusDay 2016</a></li>
          <li><a href="http://calcotestudios.com/ato2016">All Things Open 2016</a></li>
@@ -123,13 +151,13 @@
 
          <h3><a href="http://blog.gingergeek.com/about">Publications</a></h3>
           <ul style="white-space: nowrap;">
-           	<li class="matrix"><a href="http://blog.gingergeek.com/speaking/">Speaking</a></li>
-           	<li class="matrix"><a href="http://blog.gingergeek.com/podcasts/">Podcasts</a></li>
-           	<li class="nw"><a href="http://www.networkworld.com/author/Lee-Calcote/">Network World</a></li>
-           	<li class="tns"><a href="http://thenewstack.io/author/lee-calcote/">The New Stack</a></li>
-           	<li class="cisco"><a href="http://blogs.cisco.com/author/LeeCalcote/" rel="nofollow">Cisco blog</a></li>
-           	<li class="seagate"><a href="http://blog.seagate.com/?s=Lee%20Calcote&amp;search_by=author" rel="nofollow">Seagate blog</a></li>
-           	<li class="gg"><a href="http://blog.gingergeek.com/" rel="nofollow">Ginger Geek blog</a></li>
+            <li class="matrix"><a href="http://blog.gingergeek.com/speaking/">Speaking</a></li>
+            <li class="matrix"><a href="http://blog.gingergeek.com/podcasts/">Podcasts</a></li>
+            <li class="nw"><a href="http://www.networkworld.com/author/Lee-Calcote/">Network World</a></li>
+            <li class="tns"><a href="http://thenewstack.io/author/lee-calcote/">The New Stack</a></li>
+            <li class="cisco"><a href="http://blogs.cisco.com/author/LeeCalcote/" rel="nofollow">Cisco blog</a></li>
+            <li class="seagate"><a href="http://blog.seagate.com/?s=Lee%20Calcote&amp;search_by=author" rel="nofollow">Seagate blog</a></li>
+            <li class="gg"><a href="http://blog.gingergeek.com/" rel="nofollow">Ginger Geek blog</a></li>
           </ul>
       </div>
    </body>
