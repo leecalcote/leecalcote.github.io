@@ -1,30 +1,31 @@
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">>
   <head>
     <title>Lee Calcote's Talks</title>
       <style>
           body {
+            background-repeat: no-repeat;
+            background-color: #000000;
+            background-image: url("Lee Calcote - All Things Open.jpg");
             background-attachment: fixed;
             background-position: stretch;
-            background-image: url("Lee Calcote - All Things Open.jpg");
-            background-color: #01417f;  
             font-family: sans-serif;
           }
           li {
-              font-family: sans-serif;
+                    font-family: sans-serif;
           }
           ul {
-            color: black;
-          }
+                    color: black;
+                 }
           h3 {
             color: black;
             font-family: sans-serif;
           }
           a {
-            color: black;
-            font-family: sans-serif;
-            text-decoration: none;
-
-          }
+              color: black;
+              font-family: sans-serif;
+              text-decoration: none;
+           }
           a:hover {
             text-decoration: underline;
           }
@@ -61,7 +62,7 @@
          $(document).ready(function() {
         var talks = [];
             //$("#driver").click(function(){
-               $.getJSON('https://github.com/leecalcote/talks/raw/gh-pages/talks.json', function(talks) {
+               $.getJSON('talks.json', function(talks) {
                 $.each(talks.upcomingTalk, function(i,t) {
                   $('#upcoming').append('<li><a href="'+ t.eventURL + '">' + t.eventName + '</a></li>');
                   //$('#upcoming').append('<li>Date: ' + t.date+ '</li>');
@@ -80,7 +81,7 @@
    <body>
      <div>
        <h3><a href="http://blog.gingergeek.com/speaking">Talks</a></h3>
-       <ul id = "upcoming" style="white-space: nowrap;"><li style="margin-left:-1em;list-style-type:none;"><u><i>Upcoming</i></u></li></ul>
+       <ul id = "upcoming" style="white-space: nowrap;"><li style="margin-left:-1em;list-style-type:none;"><i><u>Upcoming</u></i></li></ul>
        
        <ul id = "previous" style="white-space: nowrap;"><li style="margin-left:-1em;list-style-type:none;"><u><i>Previous</i></u></li></ul>
 
