@@ -1,41 +1,54 @@
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">>
   <head>
 	  <title>Lee Calcote's Talks</title>
     <meta property="og:image" content="Lee Calcote - All Things Open.jpg" />
     <meta name="description"  content="Lee Calcote - Clouds, containers, infrastructure, applications and their management. Thoughts on software engineering, orchestration, configuration management, microservices" />
     <meta name="keywords"  content="Lee Calcote, strategist, technologist, author, speaker, analyst, container orchestration, microservices, openstack, docker, cloud, containers, docker, paas, iaas, saas, devops, openshift, network management, cloud, clouds, unikernels, remote management" />
+    <title>Lee Calcote's Talks</title>
     <link rel="stylesheet" type="text/css" href="http://calcotestudios.com/talks/style.css">
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>   
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+        var talks = [];
+            //$("#driver").click(function(){
+               $.getJSON('http://calcotestudios.com/talks/talks.json', function(talks) {
+                $.each(talks.upcomingTalk, function(i,t) {
+                  var temp = '<li><a href="'+ t.eventURL + '">' + t.eventName + '</a>';
+                  //$('#upcoming').append('<li><a href="'+ t.eventURL + '">' + t.eventName + '</a>');
+                  if (t.deckURL)
+                    temp += ' | <a class="deck" href="'+t.deckURL+'">deck</a>';
+                  if (t.videoURL)
+                    temp += ' | <a class="deck" href="'+t.videoURL+'">video</a>';
+                  temp += '</li>';
+                  // $('#upcoming').append(' | <a href="'+t.deckURL+'">deck</a></li>');
+                  // $('#upcoming').append('</li>');
+                  // $('#upcoming').append('<li>Date: ' + t.date+ '</li>');
+                  $('#upcoming').append(temp);
+                  $(talks).appendTo("#upcoming ul");
+               });
+                $.each(talks.previousTalk, function(j,t) {
+                   var temp = '<li><a href="'+ t.eventURL + '">' + t.eventName + '</a>';
+                   if (t.deckURL)
+                    temp += ' | <a class="deck" href="'+t.deckURL+'">deck</a>';
+                    if (t.videoURL)
+                    temp += ' | <a class="deck" href="'+t.videoURL+'">video</a>';
+                  temp += '</li>';
+                  //$('#previous').append('<li><a href="'+ t.eventURL + '">' + t.eventName + '</a> | <a href="'+t.deckURL+'">deck</a></li>');
+                  //$('#previous').append('<li>Date: ' + t.date+ '</li>');
+                  $('#previous').append(temp);
+                  $(talks).appendTo("#previous ul");
+               });
+                
+            });      
+         });
+      </script>
    </head>
-   <body style="background-image: url('Lee Calcote - All Things Open.jpg');">>
+   <body style="background-image: url('Lee Calcote - All Things Open.jpg');">
      <div>
        <h3><a href="http://blog.gingergeek.com/speaking">Talks</a></h3>
-       <ul style="white-space: nowrap;">
-         <li style="margin-left:-1em;list-style-type:none;"><i>Upcoming</i></li>
-         <li><a href="https://conferences.oreilly.com/velocity/vl-ca">Velocity 2017</a>
-      	 <li><a href="http://events.linuxfoundation.org/events/cloudnativecon-and-kubecon-europe">CloudNativeCon + KubeCon EU 2017</a>
-         <li><a href="https://tmt.knect365.com/container-world">Container World 2017</a>
-	       <li><a href="http://www.socallinuxexpo.org/scale/15x/">SCALE 15x</a>
-         <li><a href="">O'Reilly Webcast - Load-balancers</a>
-         <li><a href="http://techfieldday.com/event/tfd13/">Tech Field Day 13</a>
-         <li style="margin-left:-1em;list-style-type:none;"><i>Previous</i></li>
-	       <li>SolarWinds Tech Summit 2017 <a href="http://calcotestudios.com/techsummit-feto">(1)</a>, <a href="http://calcotestudios.com/techsummit-over-under">(2)</a>, <a href="http://calcotestudios.com/techsummit-ccco">(3)</a></li>
-         <li><a href="http://calcotestudios.com/alldaydevops2016">All Day DevOps 2016</a></li>
-         <li><a href="http://calcotestudios.com/kubecon-bof">KubeCon + CloudNativeCon + PrometheusDay 2016</a></li>
-         <li><a href="http://calcotestudios.com/ato2016">All Things Open 2016</a></li>
-         <li><a href="http://blog.gingergeek.com/speaking/#containerdaysaustin2016">Container Days Austin 2016</a>
-         <li><a href="http://calcotestudios.com/feto">ContainerizeThis 2016</a></li>
-         <li><a href="http://calcotestudios.com/nginx16">Nginx Conf 2016</a></li>
-         <li><a href="http://calcotestudios.com/ccka">LinuxCon + ContainerCon + CloudNativeDay 2016</a></li>
-         <li><a href="http://calcotestudios.com/over-under">Rackspace Tech Talk 2016</a></li>
-         <li><a href="http://blog.gingergeek.com/speaking/#containersummitaustin2016">Container Summit Austin 2016</a></li>
-         <li><a href="http://calcotestudios.com/dockercon-2016-recap">DockerCon 2016 Recap</a></li>
-         <li><a href="http://calcotestudios.com/scol">DevOps Days Austin 2016</a></li>
-         <li><a href="http://calcotestudios.com/ccco">OpenStack Summit 2016</a></li>
-         <li><a href="http://usergroup.tv/videos/contrasting-container-orchestrators">Microservices and Containers Austin</a></li>
-         <li><a href="http://calcotestudios.com/dockercon-recap">DockerCon EU 2015 Recap</a></li>
-         <li><a href="http://blog.gingergeek.com/speaking/#DockeratCisco">Docker@Cisco - Introduction to Docker</a></li>
-       </ul>
-
+       <ul id = "upcoming" style="white-space: nowrap;"><li style="margin-left:-1em;list-style-type:none;"><i><u>Upcoming</u></i></li></ul>
+       <ul id = "previous" style="white-space: nowrap;"><li style="margin-left:-1em;list-style-type:none;"><u><i>Previous</i></u></li></ul>
 
          <h3><a href="http://blog.gingergeek.com/about">Contact</h3>
           <ul style="white-space: nowrap;">
@@ -48,13 +61,13 @@
 
          <h3><a href="http://blog.gingergeek.com/about">Publications</a></h3>
           <ul style="white-space: nowrap;">
-           	<li class="matrix"><a href="http://blog.gingergeek.com/speaking/">Speaking</a></li>
-           	<li class="matrix"><a href="http://blog.gingergeek.com/podcasts/">Podcasts</a></li>
-           	<li class="nw"><a href="http://www.networkworld.com/author/Lee-Calcote/">Network World</a></li>
-           	<li class="tns"><a href="http://thenewstack.io/author/lee-calcote/">The New Stack</a></li>
-           	<li class="cisco"><a href="http://blogs.cisco.com/author/LeeCalcote/" rel="nofollow">Cisco blog</a></li>
-           	<li class="seagate"><a href="http://blog.seagate.com/?s=Lee%20Calcote&amp;search_by=author" rel="nofollow">Seagate blog</a></li>
-           	<li class="gg"><a href="http://blog.gingergeek.com/" rel="nofollow">Ginger Geek blog</a></li>
+            <li class="matrix"><a href="http://blog.gingergeek.com/speaking/">Speaking</a></li>
+            <li class="matrix"><a href="http://blog.gingergeek.com/podcasts/">Podcasts</a></li>
+            <li class="nw"><a href="http://www.networkworld.com/author/Lee-Calcote/">Network World</a></li>
+            <li class="tns"><a href="http://thenewstack.io/author/lee-calcote/">The New Stack</a></li>
+            <li class="cisco"><a href="http://blogs.cisco.com/author/LeeCalcote/" rel="nofollow">Cisco blog</a></li>
+            <li class="seagate"><a href="http://blog.seagate.com/?s=Lee%20Calcote&amp;search_by=author" rel="nofollow">Seagate blog</a></li>
+            <li class="gg"><a href="http://blog.gingergeek.com/" rel="nofollow">Ginger Geek blog</a></li>
           </ul>
       </div>
    </body>
