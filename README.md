@@ -1,7 +1,7 @@
 A place to post talks...
 
-* http://calcotestudios.com/talks
+* https://calcotestudios.com/talks
 
 And...
 
-* http://blog.gingergeek.com/speaking
+* https://gingergeek.com/speaking
