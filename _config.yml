@@ -1,4 +1,4 @@
-site.url: http://calcotestudios.com
+site.url: https://calcotestudios.com
 name: Lee Calcote's Talks
 gems:
   - jekyll-redirect-from
